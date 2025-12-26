@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga-Aerea Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <img src="logo.png" alt="Carga Aerea Logo" style="height: 100%; width: auto;">
+            </div>
+            <h1 class="logo-text">Carga-<span class="accent">Aerea</span></h1>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-stats">
+                <div class="hero-stat-card primary">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-content">
+                        <h2 class="stat-value" id="total-parcels">3,013,182</h2>
+                        <p class="stat-label">total parcels processed</p>
+                    </div>
+                </div>
+                <div class="hero-stat-card secondary">
+                    <div class="stat-icon">🔍</div>
+                    <div class="stat-content">
+                        <h2 class="stat-value" id="inspection-percentage">4.12%</h2>
+                        <p class="stat-label">have required thorough inspection</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert-card" id="missing-data-alert">
+                <div class="alert-icon">⚠️</div>
+                <div class="alert-content">
+                    <h3 class="alert-title">Over 3.8% of parcels have missing data:</h3>
+                    <ul class="alert-list">
+                        <li id="missing-consignee">Consignee data missing: <strong>+56,000</strong></li>
+                        <li id="missing-description">Description data missing: <strong>+3,000</strong></li>
+                        <li id="missing-shipper">Shipper data missing: <strong>+55,000</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-container">
+        <!-- Left Panel: Label Analysis -->
+        <aside class="label-analysis-panel">
+            <div class="panel-header">
+                <h2 class="panel-title" id="label-analysis-title">In-depth analysis of label 'mercancia_regulada'</h2>
+            </div>
+            <div class="panel-content">
+                <div class="label-stats">
+                    <span class="label-count" id="label-parcel-count">43,748 parcels</span>
+                    <span class="label-percentage" id="label-percentage">(1.45%)</span>
+                </div>
+
+                <div class="top-list">
+                    <h3 class="list-title">Top 5 shippers:</h3>
+                    <ul class="ranking-list" id="label-top-shippers">
+                        <li class="ranking-item">
+                            <span class="rank-name">THIRD PARTY COURIER SERVICE</span>
+                            <span class="rank-value">2,258</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="rank-name">SHEIN DISTRIB INTL</span>
+                            <span class="rank-value">2,060</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="rank-name">AMAZON FBA</span>
+                            <span class="rank-value">1,334</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="rank-name">FEDEX OR SUBSIDIARIES</span>
+                            <span class="rank-value">547</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="rank-name">CORREOS E</span>
+                            <span class="rank-value">298</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="top-list">
+                    <h3 class="list-title">Top 5 consignees:</h3>
+                    <ul class="ranking-list" id="label-top-consignees">
+                        <li class="ranking-item">
+                            <span class="rank-name">KOSTAL ME S.A. DE C.V.</span>
+                            <span class="rank-value">375</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="rank-name">MACIME TENANGO</span>
+                            <span class="rank-value">101</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="rank-name">ADRIANA GONSALES L</span>
+                            <span class="rank-value">86</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="rank-name">PURAC ME S DE RL DE CV</span>
+                            <span class="rank-value">84</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="rank-name">MF</span>
+                            <span class="rank-value">83</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="top-list">
+                    <h3 class="list-title">Top 5 descriptions:</h3>
+                    <ul class="ranking-list" id="label-top-descriptions">
+                        <li class="ranking-item">
+                            <span class="rank-name">CHEMICALS</span>
+                            <span class="rank-value">674</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="rank-name">ALERTA ADUANA</span>
+                            <span class="rank-value">333</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="rank-name">MISCELLANEOUS EDIBLE PREPARATIONS</span>
+                            <span class="rank-value">234</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="rank-name">DRUGSTORE ITEM</span>
+                            <span class="rank-value">189</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="rank-name">VITAMINS - VITAMINS</span>
+                            <span class="rank-value">143</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Panel: Comparison View -->
+        <section class="comparison-panel">
+            <div class="comparison-columns">
+                <!-- Column 1 -->
+                <div class="comparison-column" id="column-1" data-period="accumulated">
+                    <div class="column-header">
+                        <select class="column-title-select" id="column-1-selector">
+                            <option value="accumulated" selected>All Time</option>
+                            <option value="2022-01">January 2022</option>
+                        </select>
+                    </div>
+
+                    <div class="column-content">
+                        <div class="total-parcels">
+                            <span class="total-label">Total Parcels</span>
+                            <span class="total-value" id="column-1-total">3,013,182</span>
+                        </div>
+
+                        <div class="label-breakdown">
+                            <h4 class="breakdown-title">Label Distribution</h4>
+                            <canvas id="column-1-chart" style="max-height: 200px;"></canvas>
+                        </div>
+
+                        <div class="top-list">
+                            <h4 class="list-title">Top 5 shippers:</h4>
+                            <ul class="ranking-list compact" id="column-1-top-shippers">
+                                <li class="ranking-item">
+                                    <span class="rank-name">AMAZON FBA</span>
+                                    <span class="rank-value">556,648</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">ZOETOP BUSINESS (ECOMMERCE)</span>
+                                    <span class="rank-value">533,617</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">ROADGET BUSINESS PTE LTD</span>
+                                    <span class="rank-value">107,226</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">GOLDEN STATE (AMAZON FBA)</span>
+                                    <span class="rank-value">103,248</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">THIRD PARTY COURIER SERVICE</span>
+                                    <span class="rank-value">85,527</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="top-list">
+                            <h4 class="list-title">Top 5 descriptions:</h4>
+                            <ul class="ranking-list compact" id="column-1-top-descriptions">
+                                <li class="ranking-item">
+                                    <span class="rank-name">PRENDAS DE VESTIR</span>
+                                    <span class="rank-value">288,040</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">APPAREL</span>
+                                    <span class="rank-value">163,649</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">BOOKS</span>
+                                    <span class="rank-value">144,059</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">PRENDAS DE VESTIR</span>
+                                    <span class="rank-value">89,767</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">TOYS</span>
+                                    <span class="rank-value">77,680</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="top-list">
+                            <h4 class="list-title">Top 5 consignees:</h4>
+                            <ul class="ranking-list compact" id="column-1-top-consignees">
+                                <li class="ranking-item">
+                                    <span class="rank-name">FEDEX OR SUBSIDIARIES</span>
+                                    <span class="rank-value">20,193</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">AMAZON</span>
+                                    <span class="rank-value">9,396</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">unknown</span>
+                                    <span class="rank-value">5,245</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">ZOETOP BUSINESS CO. LIMITED</span>
+                                    <span class="rank-value">2,869</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">ITZEL NUNEZ PEREZ</span>
+                                    <span class="rank-value">2,536</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vertical Separator -->
+                <div class="column-separator"></div>
+
+                <!-- Column 2 -->
+                <div class="comparison-column" id="column-2" data-period="2022-01">
+                    <div class="column-header">
+                        <select class="column-title-select" id="column-2-selector">
+                            <option value="accumulated">All Time</option>
+                            <option value="2022-01" selected>January 2022</option>
+                        </select>
+                    </div>
+
+                    <div class="column-content">
+                        <div class="total-parcels">
+                            <span class="total-label">Total Parcels</span>
+                            <span class="total-value" id="column-2-total">69,830</span>
+                        </div>
+
+                        <div class="label-breakdown">
+                            <h4 class="breakdown-title">Label Distribution</h4>
+                            <canvas id="column-2-chart" style="max-height: 200px;"></canvas>
+                        </div>
+
+                        <div class="top-list">
+                            <h4 class="list-title">Top 5 shippers:</h4>
+                            <ul class="ranking-list compact" id="column-2-top-shippers">
+                                <li class="ranking-item">
+                                    <span class="rank-name">ROADGET BUSINESS PTE. LTD.</span>
+                                    <span class="rank-value">27,161</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">VICTORIA SECRET</span>
+                                    <span class="rank-value">4,367</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">THIRD PARTY COURIER SERVICE</span>
+                                    <span class="rank-value">1,778</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">COODIVE</span>
+                                    <span class="rank-value">528</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">LULUILEMON (ECOMMERCE)</span>
+                                    <span class="rank-value">415</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="top-list">
+                            <h4 class="list-title">Top 5 descriptions:</h4>
+                            <ul class="ranking-list compact" id="column-2-top-descriptions">
+                                <li class="ranking-item">
+                                    <span class="rank-name">BOOKS</span>
+                                    <span class="rank-value">2,537</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">LEATHER ITEM/APPAREL</span>
+                                    <span class="rank-value">1,009</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">CORRESPONDENCE</span>
+                                    <span class="rank-value">972</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">APPAREL</span>
+                                    <span class="rank-value">911</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">TOYS</span>
+                                    <span class="rank-value">819</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="top-list">
+                            <h4 class="list-title">Top 5 consignees:</h4>
+                            <ul class="ranking-list compact" id="column-2-top-consignees">
+                                <li class="ranking-item">
+                                    <span class="rank-name">FEDEX OR SUBSIDIARIES</span>
+                                    <span class="rank-value">288</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">WALMART FOUNDATION</span>
+                                    <span class="rank-value">118</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">YESENIA YISEL KHADER</span>
+                                    <span class="rank-value">84</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">MIREYA CUEVAS</span>
+                                    <span class="rank-value">74</span>
+                                </li>
+                                <li class="ranking-item">
+                                    <span class="rank-name">LOURDES DIAZ DIAZ</span>
+                                    <span class="rank-value">68</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Monthly Chart Section -->
+    <section class="chart-section">
+        <div class="chart-container">
+            <h2 class="chart-title">Monthly Processed Parcels</h2>
+            <canvas id="monthly-chart"></canvas>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
