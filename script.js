@@ -40,7 +40,8 @@ function initializeChart() {
             data: monthlyData.map(d => Math.round(d.total * d.no_abrir)),
             backgroundColor: 'rgba(16, 185, 129, 0.8)',
             borderColor: 'rgba(16, 185, 129, 1)',
-            borderWidth: 1
+            borderWidth: 1,
+            hidden: true
         },
         {
             label: 'libros',
